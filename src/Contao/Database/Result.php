@@ -1,4 +1,5 @@
-<?php
+<?php // @codingStandardsIgnoreStart - we know we have side effects here.
+// @codingStandardsIgnoreEnd
 /**
  * The MetaModels extension allows the creation of multiple collections of custom items,
  * each with its own unique set of selectable attributes, with attribute extendability.
@@ -17,6 +18,12 @@
 namespace MetaModels\Test\Contao\Database;
 
 use MetaModels\Test\Contao\Database;
+
+if (!class_exists('Contao\Database\Result')) {
+    if (class_exists('MetaModels\Test\Contao\Database\Contao211\Result')) {
+        class_alias('MetaModels\Test\Contao\Database\Contao211\Result', 'Contao\Database\Result');
+    }
+}
 
 /**
  * A database result.

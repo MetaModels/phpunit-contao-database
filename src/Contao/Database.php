@@ -1,4 +1,5 @@
-<?php
+<?php // @codingStandardsIgnoreStart - we know we have side effects here.
+// @codingStandardsIgnoreEnd
 /**
  * The MetaModels extension allows the creation of multiple collections of custom items,
  * each with its own unique set of selectable attributes, with attribute extendability.
@@ -18,6 +19,12 @@ namespace MetaModels\Test\Contao;
 
 use MetaModels\Test\Contao\Database\QueryCollection;
 use MetaModels\Test\Contao\Database\Statement;
+
+if (!class_exists('Contao\Database')) {
+    if (class_exists('MetaModels\Test\Contao\Database\Contao211\Database')) {
+        class_alias('MetaModels\Test\Contao\Database\Contao211\Database', 'Contao\Database');
+    }
+}
 
 /**
  * Mock-up micro class to simulate the Contao Database class.
@@ -39,6 +46,13 @@ class Database extends \Contao\Database
     public static function register()
     {
         if (!class_exists('Database', false)) {
+            if (class_exists('MetaModels\Test\Contao\Database\Contao211\Database', false)) {
+                class_alias('MetaModels\Test\Contao\Database\Contao211\Statement', 'Contao\Database\Statement');
+                class_alias('MetaModels\Test\Contao\Database\Contao211\Statement', 'Database_Statement');
+                class_alias('MetaModels\Test\Contao\Database\Contao211\Result', 'Contao\Database\Result');
+                class_alias('MetaModels\Test\Contao\Database\Contao211\Result', 'Database_Result');
+            }
+
             class_alias('MetaModels\Test\Contao\Database', 'Database');
             class_alias('Contao\Database\Statement', 'Database\Statement');
             class_alias('Contao\Database\Result', 'Database\Result');
