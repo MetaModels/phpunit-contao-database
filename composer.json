@@ -1,0 +1,51 @@
+{
+  "name": "metamodels/phpunit-contao-database",
+  "description": "MetaModels phpunit contao database classes",
+  "keywords": ["metamodels", "phpunit"],
+  "type": "library",
+  "homepage": "http://now.metamodel.me/",
+  "license": "LGPL-3.0+",
+  "authors": [
+    {
+      "name": "Christian Schiffler",
+      "email": "c.schiffler@cyberspectrum.de",
+      "homepage": "http://www.cyberspectrum.de",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "email": "mail@metamodel.me",
+    "issues": "https://github.com/MetaModels/phpunit-contao-database/issues",
+    "irc": "irc://irc.freenode.org/contao.mm",
+    "source": "https://github.com/MetaModels/phpunit-contao-database"
+  },
+  "require": {
+    "php": ">=5.3",
+    "contao/core": ">=2.11,<4.0"
+  },
+  "require-dev": {
+    "contao-community-alliance/build-system": "~1.0",
+    "contao-community-alliance/build-system-all-tasks": "~1.0",
+    "contao-community-alliance/coding-standard": "~1.0"
+  },
+  "conflict": {
+    "contao/core": "3.0.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "MetaModels\\Test\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MetaModels\\Test\\": "tests/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
+    }
+  },
+  "prefer-stable": true,
+  "minimum-stability": "dev"
+}
