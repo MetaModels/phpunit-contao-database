@@ -20,14 +20,11 @@
     "source": "https://github.com/MetaModels/phpunit-contao-database"
   },
   "require": {
-    "php": ">=5.3",
-    "contao/core": ">=3.2,<4.0"
+    "php": ">=5.4",
+    "contao/core": "^3.5.5"
   },
   "require-dev": {
-    "phpcq/all-tasks": "~1.0"
-  },
-  "conflict": {
-    "contao/core": "3.4.0"
+    "phpcq/all-tasks": "~1.1"
   },
   "autoload": {
     "psr-4": {

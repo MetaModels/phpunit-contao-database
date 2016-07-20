@@ -19,12 +19,6 @@ namespace MetaModels\Test\Contao\Database;
 
 use MetaModels\Test\Contao\Database;
 
-if (!class_exists('Contao\Database\Statement')) {
-    if (class_exists('MetaModels\Test\Contao\Database\Contao211\Statement')) {
-        class_alias('MetaModels\Test\Contao\Database\Contao211\Statement', 'Contao\Database\Statement');
-    }
-}
-
 /**
  * A database result.
  */
