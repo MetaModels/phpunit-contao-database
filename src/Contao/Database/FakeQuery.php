@@ -222,7 +222,7 @@ class FakeQuery
 
         // Replace wildcards
         // @codingStandardsIgnoreStart
-        if (($this->compiledQuery = @vsprintf($query, $this->parameters)) == false) {
+        if (($this->compiledQuery = @vsprintf($query, $this->escapeParameters())) == false) {
         // @codingStandardsIgnoreEnd
             throw new \Exception('Too few arguments to build the query string');
         }
